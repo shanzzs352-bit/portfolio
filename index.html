@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Name | Full Stack Developer Portfolio</title>
+  <meta name="description" content="Portfolio of Your Name, a developer building fast, accessible web applications. Explore projects, skills, and experience.">
+  <meta name="theme-color" content="#0e1116">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS v4 browser CDN (zero-build). Do not mix with the Tailwind CLI. -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>
+  <link rel="stylesheet" href="css/style.css">
+  <script>try{var t=localStorage.getItem("theme");document.documentElement.dataset.theme=t||(matchMedia("(prefers-color-scheme: light)").matches?"light":"dark")}catch(e){document.documentElement.dataset.theme="dark"}</script>
+  <script src="js/script.js" defer></script>
+</head>
+<body class="bg-page text-body antialiased">
+  <a href="#home" class="skip">Skip to content</a>
+
+  <header id="header" class="fixed inset-x-0 top-0 z-50 header">
+    <nav class="mx-auto flex h-16 max-w-6xl items-center justify-between px-5" aria-label="Main">
+      <a href="#home" class="font-heading text-xl font-semibold" id="logo">YN</a>
+      <ul class="hidden items-center gap-1 md:flex" id="nav-desktop"></ul>
+      <div class="flex items-center gap-2">
+        <button id="theme-toggle" class="icon-btn" type="button" aria-label="Switch color theme"><i data-lucide="sun" class="icon-sun"></i><i data-lucide="moon" class="icon-moon"></i></button>
+        <a href="#contact" class="btn btn-primary hidden md:inline-flex">Let's Connect</a>
+        <button id="menu-toggle" class="icon-btn md:hidden" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><i data-lucide="menu"></i></button>
+      </div>
+    </nav>
+    <div id="mobile-menu" class="mobile-menu md:hidden" hidden>
+      <ul class="flex flex-col gap-1 px-5 pb-5" id="nav-mobile"></ul>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="section hero-bg flex min-h-screen items-center pt-28">
+      <div class="mx-auto grid w-full max-w-6xl items-center gap-12 px-5 lg:grid-cols-[1.4fr_1fr]">
+        <div>
+          <p class="badge-live" id="availability"></p>
+          <p class="mt-6 text-lg text-muted" id="greeting"></p>
+          <h1 class="mt-2 font-heading font-bold leading-[1.02] tracking-tight" style="font-size:clamp(2.5rem,7vw,5.25rem)" id="headline"></h1>
+          <p class="mt-4 h-8 font-heading text-xl text-accent md:text-2xl" aria-live="off"><span id="role-text"></span><span class="caret" aria-hidden="true"></span></p>
+          <p class="mt-6 max-w-xl leading-relaxed text-muted" id="hero-desc"></p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="#projects" class="btn btn-primary">Explore My Work</a>
+            <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+          </div>
+          <ul class="mt-8 flex gap-2" id="hero-socials" aria-label="Social profiles"></ul>
+        </div>
+        <div class="mx-auto w-full max-w-xs lg:max-w-sm"><div class="avatar" id="avatar"></div></div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="mx-auto max-w-6xl px-5">
+        <h2 class="h2 reveal">About me</h2>
+        <div class="mt-10 grid gap-10 md:grid-cols-[1.5fr_1fr]">
+          <div class="reveal space-y-4 leading-relaxed text-muted" id="about-text"></div>
+          <div class="reveal card p-6" id="about-side"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <div class="mx-auto max-w-6xl px-5">
+        <h2 class="h2 reveal">Skills and technologies</h2>
+        <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3" id="skills-grid"></div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="mx-auto max-w-6xl px-5">
+        <h2 class="h2 reveal">Featured projects</h2>
+        <div class="mt-8 flex flex-wrap gap-2" id="filters" role="group" aria-label="Filter projects by category"></div>
+        <div class="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3" id="projects-grid"></div>
+      </div>
+    </section>
+
+    <section id="experience" class="section">
+      <div class="mx-auto max-w-4xl px-5">
+        <h2 class="h2 reveal">Experience and education</h2>
+        <ol class="timeline mt-10" id="timeline"></ol>
+      </div>
+    </section>
+
+    <section id="achievements" class="section" hidden>
+      <div class="mx-auto max-w-6xl px-5">
+        <h2 class="h2 reveal">Certifications and achievements</h2>
+        <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3" id="achievements-grid"></div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="mx-auto max-w-5xl px-5">
+        <div class="text-center">
+          <h2 class="h2 reveal">Let's Connect and Build Something Great.</h2>
+          <p class="reveal mx-auto mt-4 max-w-xl text-muted">Recruiters, clients, and fellow developers are welcome. Pick whichever way suits you best.</p>
+        </div>
+        <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3" id="contact-grid"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="mx-auto flex max-w-6xl flex-col gap-6 px-5 py-10 md:flex-row md:items-center md:justify-between">
+      <div>
+        <p class="font-heading text-lg font-semibold" id="footer-name"></p>
+        <p class="mt-1 text-sm text-muted">&copy; <span id="year"></span> All rights reserved.</p>
+      </div>
+      <ul class="flex flex-wrap gap-x-5 gap-y-2 text-sm" id="footer-nav"></ul>
+      <div class="flex items-center gap-2">
+        <ul class="flex gap-2" id="footer-socials" aria-label="Social profiles"></ul>
+        <button id="to-top" class="icon-btn" type="button" aria-label="Back to top"><i data-lucide="arrow-up"></i></button>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
